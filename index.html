@@ -4,116 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Official Ty House</title>
-    <style>
-        /* Reset and Base Styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url('images/tile.jpg');
-            background-repeat: repeat;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #000;
-            font-size: 12px;
-        }
-        
-        img {
-            border: 0;
-        }
-        
-        a {
-            text-decoration: none;
-        }
-        
-        /* Main Layout Structure */
-        #main-table {
-            width: 800px;
-            margin: 0 auto;
-            border-collapse: collapse;
-        }
-        
-        /* Header Section */
-        #header {
-            height: 60px;
-            background-image: url('images/home_r01_c01.gif');
-            background-repeat: repeat-x;
-        }
-        
-        #welcome {
-            text-align: center;
-            padding-top: 15px;
-        }
-        
-        /* Left Border Column */
-        #left-border {
-            width: 10px;
-            background-image: url('images/home_r02_c01.gif');
-            background-repeat: repeat-y;
-        }
-        
-        /* Right Border Column */
-        #right-border {
-            width: 10px;
-            background-image: url('images/home_r02_c18.gif');
-            background-repeat: repeat-y;
-        }
-        
-        /* Content Area */
-        #content {
-            background-color: #fff;
-            vertical-align: top;
-            padding: 10px;
-        }
-        
-        /* Navigation Buttons */
-        .nav-button {
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        /* Counter Digits */
-        .counter-digit {
-            vertical-align: bottom;
-        }
-        
-        /* Quote Section */
-        .quote {
-            font-style: italic;
-            text-align: center;
-            margin: 10px 0;
-            font-size: 14px;
-        }
-        
-        /* Footer Section */
-        #footer {
-            height: 50px;
-            background-image: url('images/home_r03_c01.gif');
-            background-repeat: repeat-x;
-            vertical-align: middle;
-        }
-        
-        /* Bottom Borders */
-        #bottom-left {
-            width: 10px;
-            background-image: url('images/home_r04_c01.gif');
-            background-repeat: repeat-y;
-        }
-        
-        #bottom-right {
-            width: 10px;
-            background-image: url('images/home_r04_c18.gif');
-            background-repeat: repeat-y;
-        }
-        
-        /* Center Alignment Helper */
-        .center {
-            text-align: center;
-        }
-        
-        /* Bottom Decorations */
-        .bottom-decoration {
-            vertical-align: bottom;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Main Table Structure -->
@@ -134,10 +25,10 @@
             
             <!-- Main Content -->
             <td id="content">
-                <table width="100%" cellspacing="0" cellpadding="0">
+                <table class="content-table">
                     <tr>
                         <!-- Left Navigation Column -->
-                        <td width="120" valign="top">
+                        <td class="nav-column left-nav">
                             <a href="#"><img src="images/home_butnkd.gif" alt="Beanie" class="nav-button"></a>
                             <a href="#"><img src="images/home_butnbe.gif" alt="My Mail" class="nav-button"></a>
                             <a href="#"><img src="images/home_butnbu.gif" alt="Maria" class="nav-button"></a>
@@ -150,11 +41,11 @@
                         </td>
                         
                         <!-- Center Content -->
-                        <td valign="top">
+                        <td class="main-content">
                             <h2 class="center">Welcome to the<br>Official House</h2>
                             
                             <!-- Visitor Counter -->
-                            <p class="center">
+                            <div class="counter">
                                 <img src="images/counter04.gif" class="counter-digit">
                                 <img src="images/comma.gif" class="counter-digit">
                                 <img src="images/counter02.gif" class="counter-digit">
@@ -167,36 +58,36 @@
                                 <img src="images/comma.gif" class="counter-digit">
                                 <img src="images/counter07.gif" class="counter-digit">
                                 <img src="images/counter03.gif" class="counter-digit">
-                            </p>
+                            </div>
                             
                             <!-- Birthdays -->
-                            <p class="center"><strong>Birthdays</strong><br>Monday, August 14</p>
+                            <p class="birthdays center"><strong>Birthdays</strong><br>Monday, August 14</p>
                             
                             <!-- Quote of the Day -->
-                            <div class="center">
-                                <img src="images/home_quoteoftheday.gif" alt="Quote of The Day">
-                                <div class="quote">
+                            <div class="quote-section">
+                                <img src="images/home_quoteoftheday.gif" alt="Quote of The Day" class="quote-header">
+                                <div class="quote-text">
                                     "Beanie--better than a double hot fudge sundae!"
                                 </div>
                             </div>
                             
                             <!-- Heart Logo -->
-                            <div class="center">
+                            <div class="heart-logo center">
                                 <img src="images/heart_logo.gif" alt="The heart of collectibles">
                             </div>
                             
                             <!-- Ty Talk Section -->
-                            <p class="center">Thrige via Ty Talk<br>Gibbara is both the team and contribute that people have met at TyTe -1 week in</p>
+                            <p class="ty-talk center">Thrige via Ty Talk<br>Gibbara is both the team and contribute that people have met at TyTe -1 week in</p>
                             
                             <!-- Bottom Buttons -->
-                            <div class="center">
-                                <a href="#"><img src="images/home_butntytalk.gif" alt="Ty Talk"></a>
-                                <a href="#"><img src="images/home_butntrade.gif" alt="Trade"></a>
+                            <div class="bottom-buttons center">
+                                <a href="#"><img src="images/home_butntytalk.gif" alt="Ty Talk" class="tytalk-button"></a>
+                                <a href="#"><img src="images/home_butntrade.gif" alt="Trade" class="trade-button"></a>
                             </div>
                         </td>
                         
                         <!-- Right Navigation Column -->
-                        <td width="120" valign="top" align="right">
+                        <td class="nav-column right-nav">
                             <a href="#"><img src="images/home_butnlogout.gif" alt="Logout" class="nav-button"></a>
                             <a href="#"><img src="images/home_butninfo.gif" alt="Info" class="nav-button"></a>
                             <a href="#"><img src="images/home_butnvote.gif" alt="Vote" class="nav-button"></a>
@@ -220,11 +111,11 @@
         <tr>
             <td id="bottom-left"></td>
             <td id="footer">
-                <table width="100%" cellspacing="0" cellpadding="0">
+                <table class="footer-table">
                     <tr>
-                        <td width="33%"><img src="images/home_r04_c03.gif" class="bottom-decoration"></td>
-                        <td align="center" style="font-size: 10px;">USE OF THIS SITE SIGNIFIES YOUR AGREEMENT TO OUR TERMS AND CONDITIONS.</td>
-                        <td width="33%" align="right"><img src="images/home_r04_c15.gif" class="bottom-decoration"></td>
+                        <td class="footer-left"><img src="images/home_r04_c03.gif" class="footer-decoration"></td>
+                        <td class="footer-text">USE OF THIS SITE SIGNIFIES YOUR AGREEMENT TO OUR TERMS AND CONDITIONS.</td>
+                        <td class="footer-right"><img src="images/home_r04_c15.gif" class="footer-decoration"></td>
                     </tr>
                 </table>
             </td>
@@ -234,7 +125,7 @@
         <!-- Bottom Decoration Row -->
         <tr>
             <td colspan="3">
-                <table width="100%" cellspacing="0" cellpadding="0">
+                <table class="bottom-decoration-table">
                     <tr>
                         <td><img src="images/home_r12_c04.gif" class="bottom-decoration"></td>
                         <td><img src="images/home_r12_c05.gif" class="bottom-decoration"></td>
