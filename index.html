@@ -150,9 +150,13 @@ if (document.images) {
   </tr>
   <tr valign="top"><!-- row 10 -->
     <td rowspan="2" colspan="11" align="center">
-<nobr><img src="images/counter04.gif" width="13" height="20" vspace="0" border="0"><img src="images/comma.gif" width="8" height="20" vspace="0" border="0"><img src="images/counter02.gif" width="13" height="20" vspace="0" border="0"><img src="images/counter03.gif" width="13" height="20" vspace="0" border="0"><img src="images/counter03.gif" width="13" height="20" vspace="0" border="0"><img src="images/comma.gif" width="8" height="20" vspace="0" border="0"><img src="images/counter08.gif" width="13" height="20" vspace="0" border="0"><img src="images/counter05.gif" width="13" height="20" vspace="0" border="0"><img src="images/counter01.gif" width="13" height="20" vspace="0" border="0"><img src="images/comma.gif" width="8" height="20" vspace="0" border="0"><img src="images/counter06.gif" width="13" height="20" vspace="0" border="0"><img src="images/counter07.gif" width="13" height="20" vspace="0" border="0"><img src="images/counter03.gif" width="13" height="20" vspace="0" border="0"></nobr>
-<br>
-</td>
+      <nobr>
+        <span id="projectCounter">
+          <!-- JavaScript will populate this with digit images -->
+        </span>
+      </nobr>
+      <br>
+    </td>
    <td><img src="images/shim.gif" width="1" height="26" border="0"></td>
   </tr>
   <tr valign="top"><!-- row 11 -->
@@ -201,22 +205,71 @@ if (document.images) {
    <td colspan="2"><a href="javascript:void(0)"><img name="home_butnmyinfo" src="images/home_butnmyinfo.gif" width="119" height="96" border="0"></a></td>
    <td><img src="images/shim.gif" width="1" height="96" border="0"></td>
   </tr>
-
 </table>
 
+<script>
+// CONFIGURATION - Set your project count here (0-9,999,999,999)
+const projectCount = 0; // Change this number to update your counter
+
+// Function to create a digit image
+function createDigit(digit) {
+  const img = document.createElement('img');
+  img.src = `images/counter0${digit}.gif`;
+  img.width = 13;
+  img.height = 20;
+  img.style.verticalAlign = 'middle';
+  img.border = '0';
+  img.vspace = '0';
+  return img;
+}
+
+// Function to create comma image
+function createComma() {
+  const img = document.createElement('img');
+  img.src = 'images/comma.gif';
+  img.width = 8;
+  img.height = 20;
+  img.style.verticalAlign = 'middle';
+  img.border = '0';
+  img.vspace = '0';
+  return img;
+}
+
+// Update the counter display
+function updateCounter() {
+  const counterElement = document.getElementById('projectCounter');
+  counterElement.innerHTML = ''; // Clear existing counter
+  
+  // Format number with exactly 10 digits, leading zeros
+  const countStr = Math.min(projectCount, 9999999999).toString().padStart(10, '0');
+  
+  // Add each digit image with commas in the original format
+  for (let i = 0; i < countStr.length; i++) {
+    counterElement.appendChild(createDigit(countStr[i]));
+    
+    // Add commas at the exact same positions as original
+    if (i === 0 || i === 4 || i === 7) {
+      counterElement.appendChild(createComma());
+    }
+  }
+}
+
+// Initialize the counter
+updateCounter();
+</script>
+
 <center>
-        <font face="Comic Sans MS" size="-2" color="#666666"> <a href="javascript:void(0)">Click
-        here to read the terms and conditions that apply to your use of o5 Inc.'
-s
-        website.</a><br>
-        USE OF THIS SITE SIGNIFIES YOUR AGREEMENT TO
-        OUR TERMS AND CONDITIONS.<br>
-        <a href="javascript:void(0)">o5's Privacy
-        Policy</a>&amp; <a href="javascript:void(0)">Pricing
-        Philosophy</a>&amp; <a href="javascript:void(0)">New
-        Shipping Policy</a>
-        </font>
-      </center>
+  <font face="Comic Sans MS" size="-2" color="#666666"> <a href="javascript:void(0)">Click
+  here to read the terms and conditions that apply to your use of o5 Inc.'s
+  website.</a><br>
+  USE OF THIS SITE SIGNIFIES YOUR AGREEMENT TO
+  OUR TERMS AND CONDITIONS.<br>
+  <a href="javascript:void(0)">o5's Privacy
+  Policy</a>&amp; <a href="javascript:void(0)">Pricing
+  Philosophy</a>&amp; <a href="javascript:void(0)">New
+  Shipping Policy</a>
+  </font>
+</center>
 
 </body>
 </html>
