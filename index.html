@@ -180,8 +180,13 @@ if (document.images) {
   <tr valign="top">
     <td colspan="2">&nbsp;</td> 
     <td rowspan="2" colspan="7" align="center"> 
-      <p><font face="Comic Sans MS, Arial, Helvetica, sans-serif"><b><font color="#000099" size="4">Monday, 
-        August 14<br>
+     <p>
+  <font face="Comic Sans MS, Arial, Helvetica, sans-serif">
+    <b><font color="#000099" size="4">
+      <span id="current-date"></span><br>
+    </font></b>
+  </font>
+     </p>
         </font></b></font><img src="images/home_quoteoftheday.gif" width="212" height="22" vspace="8"><br>
 <font color="#000099" face="Comic Sans MS" size="2">
 <b>" Spread the word ! "</b>
@@ -221,6 +226,14 @@ if (document.images) {
   Shipping Policy</a>
   </font>
 </center>
+<script>
+  
+  var today = new Date();
+  
+  var options = { weekday: 'long', month: 'long', day: 'numeric' };
+  var formattedDate = today.toLocaleDateString('en-US', options);
 
+  document.getElementById('current-date').textContent = formattedDate;
+</script>
 </body>
 </html>
